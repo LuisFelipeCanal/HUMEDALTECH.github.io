@@ -1,6 +1,6 @@
 # HUMEDALTECH.github.io
 por si la pág web no funciona o hay algún incoveniente
-<h1 align="center"><HUMEDALTECH/h1>
+<h1 align="center">HUMEDALTECH</h1>
 "El tratamiento de aguas residuales se debe adaptar al tipo de uso que se vaya a destinar para optimizar su costo." (Ignasi Serviá)
 
 ![L-PEZ-2018-Humedal-de-Flujo-Horizontal-Subsuperficial.jpg](https://i.postimg.cc/rw3SPnwS/L-PEZ-2018-Humedal-de-Flujo-Horizontal-Subsuperficial.jpg)
