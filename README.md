@@ -26,13 +26,13 @@ Nuestra misión es proporcionar servicios integrales, eficientes de operación y
 
 ## Visión
 ---
-Para el grupo “Wetlands Optimization” proporcionar soluciones innovadoras para el bienestar de la población es un gran reto. Por lo que aspiramos a ser uno de los grupos con soluciones que optimizan la funcionalidad de los humedales artificiales para luego reutilizar el agua.
+Ayudar a la UPCH a crear un prototipo  que pueda separar los contaminantes que contiene el agua para que así el agua pueda  ser reutilizable en Santa María, con el propósito de mejorar a un ambiente sostenible y reducir los costos de mantenimiento. 
+
 
 
 ## ¿Qué haremos?
 ---
-Idear y prototipar diseños que optimicen los procesos de mantenimiento de humedales para posteriormente probar nuestra idea en el campus de la Universidad Cayetano en el distrito Santa María, provincia de Lima, departamento Lima. 
-
+Crearemos un prototipo de baja fidelidad que ayude a alertar, monitorear ,evaluar y predecir datos del humedal artificial. Haremos el dispositivo y será capaz de mandar alertas por si el humedal se encuentra en mal estado en este caso nos centraremos en la concentración de pH en el agua residual y que los datos evaluados del pH sean enviado a una base de datos para estar al tanto del humedal artificial.
 
 ## ¿Quiénes somos?
 ---
