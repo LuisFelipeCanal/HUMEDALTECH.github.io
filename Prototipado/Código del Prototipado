@@ -1,0 +1,27 @@
+float valorMinPoten=0;
+float valorMaxPoten=4095.0;
+float valorMinPH=0.0;
+float valorMaxPH=14.0;
+float valorMinCon=0.0;
+float valorMaxCon=4000.0; 
+void setup() {
+ //pines
+ Serial.begin(115200);
+ pinMode(A0, INPUT);
+ pinMode(32,INPUT);
+}
+void loop() {
+ //put your main code here, to run repeatedly: 
+ int valor analogRead(A0); //colocamos una variable al analogread
+ //usamos map para cambiar de 0-4095 del potenciometro a 0-14 del pH 
+ float valorPH map(valor, valorMinPoten, valorMaxPoten, valorMinPH, valorMaxPH);
+ //impriminos el mensaje ph e impriminos los valores en 2 decimales
+ Serial.print("pH: "); 
+ Serial.println(valorPH, 2);
+ // colocamos otro valor para leer el pin del potenciometro
+ int valor2-analogRead(32);
+ // tranformamos de 0-4095 del numero predeterminado del potenciometro a 0-4000 de conductividad 
+ float valorCON - map(valor2, valorMinPoten, valorMaxPoten, valor incon, valorMaxCon); 
+ Serial.print("Conductividad: "); 
+ Serial.println(valorCON, 2); 
+ delay(2000)
