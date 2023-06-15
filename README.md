@@ -20,7 +20,9 @@ El grupo Wetlands Optimization les da la bienvenida a nuestro website, cuyo prop
 
 ## Misión
 ---
-Conocer de cerca las necesidades de la población que busca la reutilización de aguas residuales de manera segura. Una vez que hayamos empatizado con la población buscar soluciones a la problemática con ideas novedosas de implementación o refuerzo al estado de arte con tecnología que maximice resultados y minimice costos. 
+Nuestra misión es proporcionar servicios integrales, eficientes de operación y mantenimiento de humedales construidos para el tratamiento de aguas residuales. Con el fin de reducir la contaminación del agua y proteger el medio ambiente. A través de nuestro compromiso y experiencia, aseguramos que los humedales construidos funcionan de manera óptima para el tratamiento de las aguas residuales. 
+
+
 
 ## Visión
 ---
