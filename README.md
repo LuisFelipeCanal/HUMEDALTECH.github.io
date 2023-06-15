@@ -5,8 +5,8 @@ por si la pág web no funciona o hay algún incoveniente
 
 ![L-PEZ-2018-Humedal-de-Flujo-Horizontal-Subsuperficial.jpg](https://i.postimg.cc/rw3SPnwS/L-PEZ-2018-Humedal-de-Flujo-Horizontal-Subsuperficial.jpg)
 
-Hola! 🤓
-El grupo Wetlands Optimization les da la bienvenida a nuestro website, cuyo propósito es dar a conocer la documentación de nuestra trayectoria en la investigación e implementación de soluciones innovadoras de "operación y mantenimiento de humedales construidos para el tratamiento de aguas residuales".
+Bienvenido
+El grupo HUMEDALTECH les da la bienvenida a nuestro website, cuyo propósito es dar a conocer la documentación de nuestra trayectoria en la investigación e implementación de soluciones innovadoras de "operación y mantenimiento de humedales construidos para el tratamiento de aguas residuales".
 
 
 
