@@ -1,27 +1,82 @@
-float valorMinPoten=0;
-float valorMaxPoten=4095.0;
-float valorMinPH=0.0;
-float valorMaxPH=14.0;
-float valorMinCon=0.0;
-float valorMaxCon=4000.0; 
-void setup() {
- //pines
- Serial.begin(115200);
- pinMode(A0, INPUT);
- pinMode(32,INPUT);
+#include <UbidotsEsp32Mqtt.h>
+#include <WiFi.h>
+
+#define WIFI_SSID "UPCH_CENTRAL"
+#define WIFI_PASSWORD "CAYETANO2022"
+const char *UBIDOTS_TOKEN = "BBFF-CN4uVqpqV7mTs3IMRFvcTEBi2QNAUp";
+const char *DEVICE_LABEL = "ESP32pHconduct";
+const char *VARIABLE_LABEL_1 = "phUbidots";
+const char *VARIABLE_LABEL_2 = "ConductividadUbidots";
+const int PUBLISH_FREQUENCY = 5000;
+float voltaje;
+float valor;
+float voltaje2;
+float valor2;
+const int potPIN = 34;
+const int PIN = 35;
+float conductividad;
+float pH;
+unsigned long timer;
+Ubidots ubidots(UBIDOTS_TOKEN);
+
+void callback(char *topic, byte *payload, unsigned int length)
+{
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  for (int i = 0; i < length; i++)
+  {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
 }
-void loop() {
- //put your main code here, to run repeatedly: 
- int valor analogRead(A0); //colocamos una variable al analogread
- //usamos map para cambiar de 0-4095 del potenciometro a 0-14 del pH 
- float valorPH map(valor, valorMinPoten, valorMaxPoten, valorMinPH, valorMaxPH);
- //impriminos el mensaje ph e impriminos los valores en 2 decimales
- Serial.print("pH: "); 
- Serial.println(valorPH, 2);
- // colocamos otro valor para leer el pin del potenciometro
- int valor2-analogRead(32);
- // tranformamos de 0-4095 del numero predeterminado del potenciometro a 0-4000 de conductividad 
- float valorCON - map(valor2, valorMinPoten, valorMaxPoten, valor incon, valorMaxCon); 
- Serial.print("Conductividad: "); 
- Serial.println(valorCON, 2); 
- delay(2000)
+
+void setup()
+{
+  Serial.begin(115200);
+  pinMode(potPIN,INPUT);
+  pinMode(PIN,INPUT);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(1000);
+    Serial.println("Conectando a la red WiFi");
+  }
+
+  Serial.print("Conexión WiFi establecida. Dirección IP: ");
+  Serial.println(WiFi.localIP());
+
+  ubidots.connectToWifi(WIFI_SSID, WIFI_PASSWORD);
+  ubidots.setCallback(callback);
+  ubidots.setup();
+  ubidots.reconnect();
+  timer=millis();
+}
+
+void loop()
+{
+  valor=analogRead(34);
+  valor2=analogRead(35);
+  //Serial.println(valor2);
+  float voltaje=valor*(3.3/4095);
+  float voltaje2=valor2*(3.3/4095);
+  conductividad=(1009*voltaje)+0.4;
+  pH=(-8.2296)*voltaje2 + 27.3;
+ 
+  
+  if (!ubidots.connected())
+  {
+    ubidots.reconnect();
+  }
+  if (abs(millis() - timer) > PUBLISH_FREQUENCY) // triggers the routine every 5 seconds
+  {
+    ubidots.add(VARIABLE_LABEL_1, pH);
+    ubidots.add(VARIABLE_LABEL_2, conductividad);
+    ubidots.publish(DEVICE_LABEL);
+    timer = millis();
+  }
+  ubidots.loop();
+  
+
+}
